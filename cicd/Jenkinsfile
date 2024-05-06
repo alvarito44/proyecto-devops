@@ -32,7 +32,7 @@ pipeline {
         }
         stage('build docker') {
             steps {
-                sh 'docker build -t mi-proyecto-devops'
+                sh 'docker build -t mi-proyecto-devops .'
             }
         }
     }
