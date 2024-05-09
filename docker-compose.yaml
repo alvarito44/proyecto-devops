@@ -6,3 +6,10 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+    volumes:
+      - ./api_key.txt:/usr/src/app/api_key.txt:ro
+    secrets:
+      - api_key
+secrets:
+  api_key:
+    file: ./api_key.txt

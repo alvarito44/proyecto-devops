@@ -1,8 +1,10 @@
 import express from "express";
+import * as fs from 'fs'
 import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 
 const app = express();
 const ambiente = process.env.NODE_ENV || 'desconocido'
+const mi_api_key = fs.readFileSync('run/secrets/api_key.txt', 'utf8');
 
 app.use(express.json());
 
@@ -28,5 +30,8 @@ app.get("/ambiente", (req,res) => {
   res.send(`El ambiente es:${ambiente}` );
 });
 
+app.get("/api", (req,res) => {
+  res.send(`La llave es:${mi_api_key}` );
+});
 
 export default app;
