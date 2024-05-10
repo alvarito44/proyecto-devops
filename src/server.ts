@@ -1,5 +1,5 @@
 import express from "express";
-import * as fs from 'fs'
+import fs from 'fs'
 import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 
 const app = express();
