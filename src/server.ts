@@ -4,7 +4,9 @@ import { dividir, multiplicar, restar, sumar } from "./calcular.js";
 
 const app = express();
 const ambiente = process.env.NODE_ENV || 'desconocido'
-const mi_api_key = fs.readFileSync('./api_key.txt', 'utf-8');
+const mi_api_key = fs.readFileSync('./api_key.txt', 'utf8');
+
+console.log(mi_api_key);
 
 app.use(express.json());
 
